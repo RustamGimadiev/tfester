@@ -1,7 +1,8 @@
 package main
 
 var (
-	taggableresources = []string{"aws_instance", "aws_ebs_volume"}
+	taggableResources = []string{"aws_acm_certificate", "aws_acmpca_certificate_authority", "aws_ami", "aws_ami_copy", "aws_ami_from_instance", "aws_api_gateway_stage", "aws_appsync_graphql_api", "aws_backup_plan", "aws_batch_compute_environment", "aws_cloudfront_distribution", "aws_cloudhsm2_cluster", "aws_cloudtrail", "aws_cloudwatch_event_rule", "aws_cloudwatch_log_group", "aws_cloudwatch_metric_alarm", "aws_codebuild_project", "aws_cognito_user_pool", "aws_customer_gateway", "aws_dax_cluster", "aws_db_event_subscription", "aws_db_instance", "aws_db_option_group", "aws_db_parameter_group", "aws_db_security_group", "aws_db_snapshot", "aws_db_subnet_group", "aws_default_network_acl", "aws_default_route_table", "aws_directory_service_directory", "aws_docdb_cluster", "aws_docdb_cluster_instance", "aws_docdb_cluster_parameter_group", "aws_docdb_subnet_group", "aws_dx_connection", "aws_dx_hosted_private_virtual_interface_accepter", "aws_dx_hosted_public_virtual_interface_accepter", "aws_dx_lag", "aws_dx_private_virtual_interface", "aws_dx_public_virtual_interface", "aws_dynamodb_table", "aws_ebs_volume", "aws_ec2_capacity_reservation", "aws_ec2_client_vpn_endpoint", "aws_ec2_transit_gateway_vpc_attachment_accepter", "aws_ecr_repository", "aws_ecs_cluster", "aws_ecs_service", "aws_ecs_task_definition", "aws_efs_file_system", "aws_eip", "aws_elastic_beanstalk_application", "aws_elastic_beanstalk_application_version", "aws_elastic_beanstalk_environment", "aws_elasticache_cluster", "aws_elasticache_replication_group", "aws_elasticsearch_domain", "aws_elb", "aws_emr_cluster", "aws_glacier_vault", "aws_iam_role", "aws_iam_user", "aws_instance", "aws_internet_gateway", "aws_kinesis_analytics_application", "aws_kinesis_firehose_delivery_stream", "aws_kinesis_stream", "aws_kinesis_stream_migrate", "aws_kms_external_key", "aws_kms_key", "aws_lambda_function", "aws_launch_template", "aws_lb", "aws_lb_target_group", "aws_licensemanager_license_configuration", "aws_media_package_channel", "aws_mq_broker", "aws_mq_configuration", "aws_msk_cluster", "aws_nat_gateway", "aws_neptune_cluster", "aws_neptune_cluster_instance", "aws_neptune_cluster_parameter_group", "aws_neptune_event_subscription", "aws_neptune_parameter_group", "aws_neptune_subnet_group", "aws_network_acl", "aws_network_interface", "aws_opsworks_stack", "aws_ram_resource_share", "aws_rds_cluster", "aws_rds_cluster_instance", "aws_rds_cluster_parameter_group", "aws_redshift_cluster", "aws_redshift_subnet_group", "aws_route53_health_check", "aws_route53_resolver_endpoint", "aws_route53_resolver_rule", "aws_route53_zone", "aws_route_table", "aws_s3_bucket", "aws_s3_bucket_metric", "aws_s3_bucket_object", "aws_sagemaker_endpoint", "aws_sagemaker_endpoint_configuration", "aws_sagemaker_model", "aws_sagemaker_notebook_instance", "aws_secretsmanager_secret", "aws_security_group", "aws_servicecatalog_portfolio", "aws_sfn_activity", "aws_sfn_state_machine", "aws_sns_topic", "aws_sqs_queue", "aws_ssm_document", "aws_ssm_maintenance_window", "aws_ssm_parameter", "aws_ssm_patch_baseline", "aws_subnet", "aws_transfer_server", "aws_transfer_user", "aws_vpc", "aws_vpc_dhcp_options", "aws_vpn_connection", "aws_vpn_gateway"}
+	ec2Resources      = []string{"aws_ami", "aws_ami_copy", "aws_ami_from_instance", "aws_ebs_volume", "aws_ec2_capacity_reservation", "aws_ec2_client_vpn_endpoint", "aws_ec2_transit_gateway_vpc_attachment_accepter", "aws_eip", "aws_instance", "aws_launch_template"}
 )
 
 func contains(s []string, e string) bool {
@@ -11,12 +12,4 @@ func contains(s []string, e string) bool {
 		}
 	}
 	return false
-}
-
-func isTaggable(resourceType string) bool {
-	return contains(taggableresources, resourceType)
-}
-
-func isCamelCase(word string) bool {
-	return true
 }
